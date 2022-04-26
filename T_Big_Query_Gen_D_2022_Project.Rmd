@@ -22,21 +22,35 @@ head(data_2)
 
 ## R Markdown
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+-Subsetting at with the TS Smart variable was considered best for it resulted in a bigger sample than voter file state variable
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
-
-## Slide with Bullets
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-## Slide with R Output
-
-```{r cars, echo = TRUE}
-summary(cars)
+- The TS Smart Model scores had 
+```{r , echo=FALSE}
+##TS_SMART
+nrow(data_2[data_2$vb_tsmart_state == "GA", ])
+# 15709 with ts smart
 ```
+rows
+
+-Whereas the Voter file had
+```{r , echo=FALSE}
+nrow(data_2[data_2$vb_vf_reg_state == "GA", ])
+# 13863 with voter file 
+
+```
+rows
+
+## Model Scores 
+- They were Comparable to the Real Data at the State level
+```{r , echo=FALSE}
+data_2$State_match<-ifelse(data_2$vb_tsmart_state==data_2$vb_vf_reg_state,"Match","No_Match")
+library(sur)
+percent.table(data_2$State_match, y = NULL)
+
+barplot(percent.table(data_2$State_match, y = NULL))
+
+```
+
 
 ## Slide with Plot
 
