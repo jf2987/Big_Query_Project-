@@ -120,6 +120,7 @@ dim(GA_Marietta)
 
 # https://www.unitedstateszipcodes.org/ga/
 
+write.csv(GA_data,"C:/Users/cogps/Downloads/GA_Data_Updates.csv" ,row.names = FALSE)
 
 ## So i lost hella information because R Studio is malfunctioning
 # https://community.rstudio.com/t/r-studio-crashed-and-failed-to-save-unsaved-changes-lost-r-script-and-r-studio-no-longer-reads-csv-files/22571/7
