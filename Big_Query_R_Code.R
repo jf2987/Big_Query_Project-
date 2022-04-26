@@ -99,10 +99,24 @@ percent.table(GA_data$Zip_match, y = NULL)
 
 ## Create a map
 ## https://map-rfun.library.duke.edu/01_georeference.html
+library(tidyverse)
+library(sf)
+library(mapview)
+mapview(GA_data, xcol = "vb_reg_longitude", ycol = "vb_reg_latitude", crs = 4269, grid = FALSE)
+
 
 ## look at Demographic frequencies for Marietta and Macon
+## Create subset for Macon and Marietta
+library(tidyverse)
+GA_Macon <- GA_data  %>% 
+  filter(vb_tsmart_city == "MACON")
+dim(GA_Macon)
+## 2699 rows with Macon on the ts_Smart city
 
-
+GA_Marietta <- GA_data  %>% 
+  filter(vb_tsmart_city == "MARIETTA")
+dim(GA_Marietta)
+# 5665 in Marietta
 
 # https://www.unitedstateszipcodes.org/ga/
 
