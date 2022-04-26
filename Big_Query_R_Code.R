@@ -104,6 +104,13 @@ library(sf)
 library(mapview)
 mapview(GA_data, xcol = "vb_reg_longitude", ycol = "vb_reg_latitude", crs = 4269, grid = FALSE)
 
+## Create a Column with latitude and longitude separated by a 
+## comma 
+## https://www.statology.org/unite-function-in-r/
+library(tidyr)
+
+GA_data<-GA_data %>% unite("Lat_Lon",c('vb_reg_latitude', 'vb_reg_longitude'), sep = ', ', na.rm = TRUE, remove = FALSE)
+View(GA_data)
 
 ## look at Demographic frequencies for Marietta and Macon
 ## Create subset for Macon and Marietta
@@ -120,7 +127,7 @@ dim(GA_Marietta)
 
 # https://www.unitedstateszipcodes.org/ga/
 
-write.csv(GA_data,"C:/Users/cogps/Downloads/GA_Data_Updates.csv" ,row.names = FALSE)
+write.csv(GA_data,"C:/Users/cogps/Downloads/GA_Data_Updates_2.csv" ,row.names = FALSE)
 
 ## So i lost hella information because R Studio is malfunctioning
 # https://community.rstudio.com/t/r-studio-crashed-and-failed-to-save-unsaved-changes-lost-r-script-and-r-studio-no-longer-reads-csv-files/22571/7
