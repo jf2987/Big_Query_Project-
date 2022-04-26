@@ -78,15 +78,24 @@ dim(GA_data)
 ## the state columns in this subset 
 ## https://www.tutorialspoint.com/how-to-compare-two-columns-in-an-r-data-frame-for-an-exact-match
 names(GA_data)
+
 GA_data$State_match<-ifelse(GA_data$vb_tsmart_state==GA_data$vb_vf_reg_state,"Match","No_Match")
+
+GA_data$City_match<-ifelse(GA_data$vb_tsmart_city==GA_data$vb_vf_reg_city,"Match","No_Match")
+
+GA_data$Zip_match<-ifelse(GA_data$vb_tsmart_zip==GA_data$vb_vf_reg_zip,"Match","No_Match")
+
 ## Now I need to see these results in a table
 ## https://www.rdocumentation.org/packages/sur/versions/1.0.4/topics/percent.table
 library(sur)
 percent.table(GA_data$State_match, y = NULL)
 ## there is an 84 percent match rate. I am okay with this
 
-## Create 3 additional Match variables for City and for Zip Code
+percent.table(GA_data$City_match, y = NULL)
+## 81 percent match for City
 
+percent.table(GA_data$Zip_match, y = NULL)
+## 79 percent match for zip code. 
 
 ## Create a map
 ## https://map-rfun.library.duke.edu/01_georeference.html
