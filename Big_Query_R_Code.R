@@ -142,7 +142,25 @@ library(sur)
 
 percent.table(GA_data$Age)
 
-## Creating Bar Plots with 
+## subsetting
+## https://www.statology.org/subset-data-frame-in-r/
+
+GA_data_C<-subset(GA_data, vb_tsmart_city == "MACON" | vb_tsmart_city == "MARIETTA")
+
+## Creating Bar Plots with ggplot 2 
+## http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization
+library(ggplot2)
+names(GA_data)
+
+ggplot(data=GA_data_C, aes(x=vb_tsmart_city, y=vb_voterbase_age) +
+  geom_bar(stat="identity", fill="steelblue")+
+  geom_text(aes(label=vb_voterbase_age), vjust=1.6,color="white", size=3.5)+
+  theme_minimal())
+## http://www.cookbook-r.com/Graphs/Axes_(ggplot2)/
+
+bp<-ggplot(data=GA_data_C, aes(x=vb_tsmart_city, y=vb_voterbase_age)) +
+         geom_boxplot()
+bp+coord_flip()
 
 
 # https://www.unitedstateszipcodes.org/ga/
