@@ -160,8 +160,13 @@ ggplot(data=GA_data_C, aes(x=vb_tsmart_city, y=vb_voterbase_age) +
 
 bp<-ggplot(data=GA_data_C, aes(x=vb_tsmart_city, y=vb_voterbase_age)) +
          geom_boxplot()
-bp+coord_flip()
+bp+expand_limits(y=c(0,5))
 
+bp+coord_cartesian(ylim=c(0, 100))
+
+bp+coord_cartesian(ylim=c(0, 130))
+
+bp+coord_cartesian(ylim=c(0, 112))+ scale_y_continuous(breaks=seq(0, 112, 10)) 
 
 # https://www.unitedstateszipcodes.org/ga/
 
