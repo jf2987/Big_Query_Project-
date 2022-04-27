@@ -198,10 +198,20 @@ car.data = table(GA_data_C$vb_voterbase_race, GA_data_C$vb_tsmart_city)
 print(car.data)
 
 # Perform the Chi-Square test.
-print(chisq.test(car.data))
+chisq<-chisq.test(car.data)
 ## statistically significant race variable
 ## http://sthda.com/english/wiki/chi-square-test-of-independence-in-r
 
+contrib <- 100*chisq$residuals^2/chisq$statistic
+
+library(corrplot)
+par(mar = c(5, 4, 4, 2) + 0.1)
+corrplot(contrib, is.cor = FALSE)
+round(contrib, 3)
+
+library("gplots")
+par(mar = c(1,1,1,1))
+balloonplot(contrib,label = FALSE,scale.range="relative", show.margins=FALSE)
 ## Visualize the racial differences between county
 
 
