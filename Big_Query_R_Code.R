@@ -213,7 +213,11 @@ library("gplots")
 par(mar = c(1,1,1,1))
 balloonplot(contrib,label = FALSE,scale.range="relative", show.margins=FALSE)
 ## Visualize the racial differences between county
+source("http://pcwww.liv.ac.uk/~william/R/crosstab.r")
+# vb_voterbase_race, GA_data_C$vb_tsmart_city
+crosstab(GA_data_C, col.vars = "vb_tsmart_city", row.vars = "vb_voterbase_race", type = c("r"))
 
+crosstab(GA_data_C, col.vars = "vb_tsmart_city", row.vars = "vb_voterbase_race", type = c("f"))
 
 # https://www.unitedstateszipcodes.org/ga/
 
