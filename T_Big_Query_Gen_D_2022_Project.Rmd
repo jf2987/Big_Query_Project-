@@ -47,7 +47,7 @@ rows
 -Whereas the Voter file State scores had
 ```{r , echo=FALSE}
 nrow(data_2[data_2$vb_vf_reg_state == "GA", ])
-# 13863 with voter file 
+# 13337 with voter file 
 
 ```
 rows
@@ -78,12 +78,12 @@ mapview(data_2, xcol = "vb_reg_longitude", ycol = "vb_reg_latitude", crs = 4269,
 
 -This is the numbers of folks in MARIETTA:
 ```{r , echo=FALSE}
-nrow(data_2[data_2$vb_vf_reg_city == "MARIETTA", ])
+nrow(data_2[data_2$vb_tsmart_city == "MARIETTA", ])
 
 ```
 -This is the numbers of folks in MACON:
 ```{r , echo=FALSE}
-nrow(data_2[data_2$vb_vf_reg_city == "MACON", ])
+nrow(data_2[data_2$vb_tsmart_city == "MACON", ])
 
 ```
 
