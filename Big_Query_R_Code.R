@@ -177,6 +177,32 @@ summary(one.way)
 
 ## Not statistically significant
 
+## looking at the gender variables
+
+# Load the library.
+library(MASS)
+
+# Create a data frame from the main data set.
+car.data <- data.frame(GA_data_C$vb_voterbase_gender, GA_data_C$vb_tsmart_city)
+
+# Create a table with the needed variables.
+car.data = table(GA_data_C$vb_voterbase_gender, GA_data_C$vb_tsmart_city) 
+print(car.data)
+
+# Perform the Chi-Square test.
+print(chisq.test(car.data))
+ ## Not statistically significant difference in Gender
+
+# Create a table with the needed variables.
+car.data = table(GA_data_C$vb_voterbase_race, GA_data_C$vb_tsmart_city) 
+print(car.data)
+
+# Perform the Chi-Square test.
+print(chisq.test(car.data))
+## statistically significant race variable
+## http://sthda.com/english/wiki/chi-square-test-of-independence-in-r
+
+## Visualize the racial differences between county
 
 
 # https://www.unitedstateszipcodes.org/ga/
