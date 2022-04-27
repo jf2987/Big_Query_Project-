@@ -138,6 +138,12 @@ par(mar = c(1, 1, 1, 1))
 barplot(GA_data$Age,col = "pink")
 ?barplot
 
+library(sur)
+
+percent.table(GA_data$Age)
+
+## Creating Bar Plots with 
+
 
 # https://www.unitedstateszipcodes.org/ga/
 
