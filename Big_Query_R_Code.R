@@ -168,6 +168,17 @@ bp+coord_cartesian(ylim=c(0, 130))
 
 bp+coord_cartesian(ylim=c(0, 112))+ scale_y_continuous(breaks=seq(0, 112, 10)) 
 
+## anova group differences in ages
+## https://www.scribbr.com/statistics/anova-in-r/
+
+one.way <- aov(vb_voterbase_age ~ vb_tsmart_city, data = GA_data_C)
+
+summary(one.way)
+
+## Not statistically significant
+
+
+
 # https://www.unitedstateszipcodes.org/ga/
 
 write.csv(GA_data,"C:/Users/cogps/Downloads/GA_Data_Updates_2.csv" ,row.names = FALSE)
