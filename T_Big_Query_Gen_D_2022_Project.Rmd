@@ -62,7 +62,7 @@ mapview(data_2, xcol = "vb_reg_longitude", ycol = "vb_reg_latitude", crs = 4269,
 
 ```
 
-## MACON
+## MARIETTA & MACON
 
 -This is the numbers of folks in MARIETTA:
 ```{r , echo=FALSE}
@@ -74,3 +74,4 @@ nrow(data_2[data_2$vb_vf_reg_city == "MARIETTA", ])
 nrow(data_2[data_2$vb_vf_reg_city == "MACON", ])
 
 ```
+

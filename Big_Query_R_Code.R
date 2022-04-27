@@ -129,6 +129,10 @@ GA_Marietta <- GA_data  %>%
 dim(GA_Marietta)
 # 5665 in Marietta
 
+## Explore the age variable further 
+## https://stackoverflow.com/questions/51095156/how-to-group-ages-in-specific-range-using-r
+
+Age <- cut(df$age, c(seq(40, 55, by = 5), Inf), include.lowest = TRUE)
 
 ## When was the data Created ?
 
