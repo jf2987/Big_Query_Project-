@@ -9,7 +9,11 @@ output: slidy_presentation
 - Name: Jasmin [pronounced ("Hazz-Mean")]
 - Pronouns: THEY/THEM/THEIRS
 
-[Google Data Studio Dashboard](https://datastudio.google.com/s/tEty4BbKfvU)
+- to view the hyperlinks, make sure you press "Ctrl" and then click. Else they wont open. The CTRL (i think its command for Apple) will open the hyperlinks in a new tab. 
+
+- the big query hyperlink might not work if you are not logged into a google account
+
+[Google Data Studio Dashboard](https://datastudio.google.com/reporting/0ff24aff-bee8-427f-b02e-b45c7856ca4b)
 
 [GitHub Project](https://github.com/jf2987/Big_Query_Project-)
 
