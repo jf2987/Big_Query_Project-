@@ -121,13 +121,23 @@ write.csv(Lat_Lon,"C:/Users/cogps/Downloads/Lat_Lon.csv" ,row.names = FALSE)
 library(tidyverse)
 GA_Macon <- GA_data  %>% 
   filter(vb_tsmart_city == "MACON")
+
 dim(GA_Macon)
+table(as.factor(GA_Macon$vb_voterbase_phone_presence_flag))
 ## 2699 rows with Macon on the ts_Smart city
+## 1531 available phone numbers
 
 GA_Marietta <- GA_data  %>% 
   filter(vb_tsmart_city == "MARIETTA")
+
+table(as.factor(GA_Marietta$vb_voterbase_race))
+table(as.factor(GA_Macon$vb_voterbase_race))
+
 dim(GA_Marietta)
 # 5665 in Marietta
+table(as.factor(GA_Marietta$vb_voterbase_phone_presence_flag))
+## 3610 available phone numbers
+
 
 ## Explore the age variable further 
 ## https://stackoverflow.com/questions/51095156/how-to-group-ages-in-specific-range-using-r
