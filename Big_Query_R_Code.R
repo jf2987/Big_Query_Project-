@@ -131,10 +131,13 @@ dim(GA_Marietta)
 
 ## Explore the age variable further 
 ## https://stackoverflow.com/questions/51095156/how-to-group-ages-in-specific-range-using-r
+## https://www.statology.org/error-in-plot-new-figure-margins-too-large/
+names(GA_data)
+GA_data$Age <- cut(GA_data$vb_voterbase_age, c(seq(0, 120, by = 5), Inf), include.lowest = TRUE)
+par(mar = c(1, 1, 1, 1))
+barplot(GA_data$Age,col = "pink")
+?barplot
 
-Age <- cut(df$age, c(seq(40, 55, by = 5), Inf), include.lowest = TRUE)
-
-## When was the data Created ?
 
 # https://www.unitedstateszipcodes.org/ga/
 
