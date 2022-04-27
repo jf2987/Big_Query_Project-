@@ -129,9 +129,9 @@ table(as.factor(GA_Macon$vb_voterbase_phone_presence_flag))
 
 GA_Marietta <- GA_data  %>% 
   filter(vb_tsmart_city == "MARIETTA")
-
-table(as.factor(GA_Marietta$vb_voterbase_race))
-table(as.factor(GA_Macon$vb_voterbase_race))
+library(sur)
+percent.table(as.factor(GA_Marietta$vb_voterbase_race))
+percent.table(as.factor(GA_Macon$vb_voterbase_race))
 
 dim(GA_Marietta)
 # 5665 in Marietta
@@ -202,6 +202,8 @@ print(car.data)
 # Perform the Chi-Square test.
 print(chisq.test(car.data))
  ## Not statistically significant difference in Gender
+
+## get a map with the data statistics here as well 
 
 # Create a table with the needed variables.
 car.data = table(GA_data_C$vb_voterbase_race, GA_data_C$vb_tsmart_city) 

@@ -9,6 +9,8 @@ output: slidy_presentation
 - Name: Jasmin [pronounced ("Hazz-Mean")]
 - Pronouns: THEY/THEM/THEIRS
 
+[Google Data Studio Dashboard](https://datastudio.google.com/s/tEty4BbKfvU)
+
 ## The TS GA Sub setted Data
 
 ```{r tabsets, echo=FALSE}
@@ -75,3 +77,16 @@ nrow(data_2[data_2$vb_vf_reg_city == "MACON", ])
 
 ```
 
+## Now we can Look at age Break Down of Cities
+
+
+```{r , echo=FALSE}
+GA_data_S<-subset(data_2, vb_tsmart_city == "MACON" | vb_tsmart_city == "MARIETTA")
+
+library(ggplot2)
+bp<-ggplot(data=GA_data_S, aes(x=vb_tsmart_city, y=vb_voterbase_age)) +
+         geom_boxplot()
+bp+coord_cartesian(ylim=c(0, 112))+ scale_y_continuous(breaks=seq(0, 112, 10)) 
+
+
+```
