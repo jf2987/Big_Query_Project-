@@ -15,6 +15,8 @@ output: slidy_presentation
 
 [Executive Report](https://docs.google.com/document/d/1WXB-zkv5wC3GcfnpDY_AYyB5i6NZ5InH_5wgcFi-QGk/edit?usp=sharing)
 
+[BigQ_EDA Code](https://console.cloud.google.com/bigquery?sq=1056050731331:ed47d7b8df624810bed63ba5dcece4fc)
+
 ## The TS GA Sub setted Data
 
 ```{r tabsets, echo=FALSE}
@@ -135,7 +137,9 @@ percent.table(as.factor(Marietta$vb_voterbase_race))
 ## Ending Statements
 
 -If I had more time:
--- I would look further into the partisan scores and available scores
--- I would also provide better visualizations
--- better code
--- and additional analyses with open source datasets
+
+- I would look further into the partisan scores and available scores
+
+- I would also provide better visualizations and better code
+
+- and additional analyses with open source datasets
