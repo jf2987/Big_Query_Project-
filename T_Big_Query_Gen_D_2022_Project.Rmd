@@ -11,6 +11,10 @@ output: slidy_presentation
 
 [Google Data Studio Dashboard](https://datastudio.google.com/s/tEty4BbKfvU)
 
+[GitHub Project](https://github.com/jf2987/Big_Query_Project-)
+
+[Executive Report](https://docs.google.com/document/d/1WXB-zkv5wC3GcfnpDY_AYyB5i6NZ5InH_5wgcFi-QGk/edit?usp=sharing)
+
 ## The TS GA Sub setted Data
 
 ```{r tabsets, echo=FALSE}
@@ -77,7 +81,7 @@ nrow(data_2[data_2$vb_vf_reg_city == "MACON", ])
 
 ```
 
-## Now we can Look at age Break Down of Cities
+## Now we can Look at age Break Down of Macon & Marietta
 
 
 ```{r , echo=FALSE}
@@ -90,3 +94,48 @@ bp+coord_cartesian(ylim=c(0, 112))+ scale_y_continuous(breaks=seq(0, 112, 10))
 
 
 ```
+
+## ## Now we can Look at Sex Break Down of Macon & Marietta
+
+This is the Sex breakdown of Macon:
+```{r , echo=FALSE}
+library(tidyverse)
+Macon <- data_2  %>% 
+  filter(vb_tsmart_city == "MACON")
+library(sur)
+percent.table(as.factor(Macon$vb_voterbase_gender))
+```
+
+This is the Sex breakdown of Marietta:
+```{r , echo=FALSE}
+Marietta <- data_2  %>% 
+  filter(vb_tsmart_city == "MARIETTA")
+
+library(sur)
+percent.table(as.factor(Marietta$vb_voterbase_gender))
+
+```
+
+
+
+## There was a difference in the breakdown of Race
+
+Racial Breakdown of Macon:
+
+```{r , echo=FALSE}
+percent.table(as.factor(Macon$vb_voterbase_race))
+```
+Racial Breakdown of Marietta:
+
+```{r , echo=FALSE}
+percent.table(as.factor(Marietta$vb_voterbase_race))
+```
+
+
+## Ending Statements
+
+-If I had more time:
+-- I would look further into the partisan scores and available scores
+-- I would also provide better visualizations
+-- better code
+-- and additional analyses with open source datasets

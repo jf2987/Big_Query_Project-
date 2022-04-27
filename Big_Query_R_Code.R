@@ -133,6 +133,8 @@ library(sur)
 percent.table(as.factor(GA_Marietta$vb_voterbase_race))
 percent.table(as.factor(GA_Macon$vb_voterbase_race))
 
+percent.table(as.factor(GA_Macon$vb_voterbase_gender))
+percent.table(as.factor(GA_Marietta$vb_voterbase_gender))
 dim(GA_Marietta)
 # 5665 in Marietta
 table(as.factor(GA_Marietta$vb_voterbase_phone_presence_flag))
